@@ -9,14 +9,18 @@ import ReactDOM from 'react-dom'
  */
 const Hello=(props)=>{
   
+   const name= props.name
+   const age = props.age
 
+   /**Funcion bornYera con sintaxis compacta */
   const bornYear =()=>{
-    const yearNow=new Date().getFullYear()
-    return yearNow - props.age
+    /*const yearNow=new Date().getFullYear()
+    return  yearNow - props.age*/
+    return new Date().getFullYear()-age
   }
   return (
      <div>
-       <p>Hello {props.name}, you are {props.age} years old</p>
+       <p>Hello {name}, you are {age} years old</p>
        <p>So you were probably born in {bornYear()}</p>
      </div>
   )   
