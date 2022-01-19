@@ -7,24 +7,18 @@ import ReactDOM from 'react-dom'
  * @param {*} props 
  * @returns 
  */
-const Hello=(props)=>{
+const Hello=(props)=>{ //Tambien podemos desestructura de la siguiente maner la función  const Hello = ({ name, age }) => {
   
-   const name= props.name
-   const age = props.age
-
-   /**Funcion bornYera con sintaxis compacta */
-  const bornYear =()=>{
-    /*const yearNow=new Date().getFullYear()
-    return  yearNow - props.age*/
-    return new Date().getFullYear()-age
-  }
+  /**Desestructuracion de los props al recibirlos */
+   const{ name, age}= props  //se desestructura los props en un solo arreglos
+   const bornYear=() => new Date().getFullYear()-age //Desestructuracion de la funcion bornYear()
+ 
   return (
      <div>
        <p>Hello {name}, you are {age} years old</p>
        <p>So you were probably born in {bornYear()}</p>
      </div>
   )   
-
 }
 
 const App = () => {
